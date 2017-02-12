@@ -1405,6 +1405,8 @@ def os_data():
                     os_release = _parse_os_release()
                     if 'NAME' in os_release:
                         grains['lsb_distrib_id'] = os_release['NAME'].strip()
+                    if 'VERSION' in os_release:
+                        grains['lsb_distrib_version'] = os_release['VERSION']
                     if 'VERSION_ID' in os_release:
                         grains['lsb_distrib_release'] = os_release['VERSION_ID']
                     if 'PRETTY_NAME' in os_release:
